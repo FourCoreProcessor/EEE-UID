@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEE and UID</title>
+    <style> 
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #000;
+            --top-bar-bg: #d2caca;
+            --button-bg: white;
+            --button-text: black;
+            --table-bg: #fff;
+            --table-header-bg: #2575fc;
+            --table-row-hover: linear-gradient(to right, #ade2f1, #f693ff);
+        }
+        body.dark-mode {
+            --bg-color: #050a15;
+            --text-color: white;
+            --top-bar-bg: #3b3b3b;
+            --button-bg: #444;
+            --button-text: white;
+            --table-bg: #242222;
+            --table-header-bg: #045ab6;
+            --table-row-hover: linear-gradient(to right, rgb(66, 66, 31), rgb(139, 75, 45));
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar {
+            background-color: var(--top-bar-bg);
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            height: 100px;
+        }
+        .buttons {
+            display: flex;
+            margin-right: 30px;
+        }
+        .button {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: 1px solid var(--button-text);
+            padding: 10px 20px;
+            margin-left: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: linear-gradient(45deg, rgb(128, 128, 234), rgb(83, 192, 83));
+            color: white;
+        }
+        #head {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 200px;
+        }
+        h4 {
+            margin-top: -20px;
+        }
+
+        .table-container {
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: var(--table-bg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .table-container:hover
+        {
+            transform:scale(1.05);
+            transition: transform 0.5;
+        }
+
+        .table-header {
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background: var(--table-header-bg);
+            color: white;
+            text-align: center;
+        }
+        .table-row {
+            padding: 15px 20px;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row a {
+            text-decoration: none;
+            color: var(--text-color);
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .table-row::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            background: var(--table-row-hover);
+            z-index: 0;
+            transition: left 0.4s ease-in-out;
+        }
+
+        .table-row:hover::before {
+            left: 0;
+        }
+
+        .table-row:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .table-row:hover a {
+            color: white;
+            font-weight: bold;
+        }
+        .team{
+            color: var(--text-color);
+            margin-top: -2%;
+            margin-left: -28.5%;
+        }
+        #member1{
+            margin-top: -10%;
+            margin-bottom: 3%;
+        }
+        #members2{
+            margin-top: 3%;
+        }
+        .teambutton{
+            border-radius: 10%;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease-in-out;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="https://amritatec.in/images/amrita1.jpg" alt="Logo">
+        </div>
+        <div class="team">
+            <h3>TEAM-2:AIE-B</h3>
+            <p id="member1">Team members:</p>
+            <button class="teambutton" onclick="openmodal1()">Ananth..</button> <button class="teambutton" onclick="openmodal2()" >Msrk..</button><br>
+            <div id="member2">
+                <button class="teambutton" onclick="openmodal3()">Devis..</button> <button class="teambutton" onclick="openmodal4()" >Jkyo.</button>
+    </div>
+    <div class="modal" id="profileModal1">
+        <div class="modal-content">
+            <h2 id="phoenix">SK Ananth Krishna</h2>
+            <p>CB.SC.U4AIE24102</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/anantha-krishna-s-k-62b405321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" id="linkedin" target="_blank">LinkedIn</a>
+                <a href="#" id="github" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="profileModal2">
+        <div class="modal-content">
+            <h2 id="msrk">Mahankali Sri Ram Krishna</h2>
+            <p>CB.SC.U4AIE24127</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/sriramkrishna-mahankali-36602b328/" id="linkedin" target="_blank">LinkedIn</a>
+                <a href="#" id="github" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="profileModal3">
+        <div class="modal-content">
+            <h2 id="phosans">T.Devi Sri Soumith</h2>
+            <p>CB.SC.U4AIE24155</p>
+            
+            <div class="links">
+                <a href="www.linkedin.com/in/devisri-soumith-7b9a61333" id="linkedin" target="_blank">LinkedIn</a>
+                <a href="https://github.com/17devisri" id="github" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="profileModal4">
+        <div class="modal-content">
+            <h2 id="jkyo">JK Yogesh</h2>
+            <p>CB.SC.U4AIE24161</p>            
+            <div class="links">
+                <a href="https://www.linkedin.com/in/yogesh-jambunathan-kannan-126b12341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" id="linkedin" target="_blank">LinkedIn</a>
+                <a href="#" id="github" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+<script>
+        function openmodal1() {
+            document.getElementById("profileModal1").style.display = "flex";
+        }
+        function openmodal2() {
+            document.getElementById("profileModal2").style.display = "flex";
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById("profileModal2");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        function openmodal3() {
+            document.getElementById("profileModal3").style.display = "flex";
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById("profileModal3");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        function openmodal4() {
+            document.getElementById("profileModal4").style.display = "flex";
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById("profileModal4");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        window.onclick = function(event) {
+    let modals = document.querySelectorAll(".modal");
+
+    modals.forEach(function(modal) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
+    </script>
+   </div>
+       <div class="buttons">
+            <button class="button" id="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <button class="button" id="button1" onclick="window.location.href='source.html'"><span style="color: #ff9100;">&lt/&gt</span>source code</button>
+            <button class="button" id="button2">four core processor</button>
+        </div>
+    </div>
+    <div id="head">
+        <h1>MPPT for Wind Turbines</h1>
+        <h4>using Reinforced learning</h4>
+    </div>
+    <div class="table-container">
+        <div class="table-header">Table of Contents</div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/introduction.html">|| Introduction </a>
+        </div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/problem.html">|| Problem Statement</a>
+        </div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/objective.html">|| Objectives</a>
+        </div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/rl.html">||  What Is Reinforcement Learning</a>
+        </div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/lr.html">|| Literature Review</a>
+        </div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/matlab.html">|| Implementation in Simulink</a>
+        </div>
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/expectedd.html">|| Expected Results</a>
+        </div>
+        <div class="table-row">
+            <a href="uideee/table.html">|| MPPT and RL</a>
+        </div>
+        
+        <div class="table-row">
+            <a href="https://17devisri.github.io/uideee/conclusion.html">|| Conclusion</a>
+        </div>
+    </div>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themetoggle = document.getElementById("theme-toggle");
+
+            if (body.classList.contains("dark-mode")) {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("theme", "light");
+                themetoggle.textContent = "🌙 Dark Mode";
+            } else {
+                body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark");
+                themetoggle.textContent = "☀️ Light Mode";
+            }
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            const themetoggle = document.getElementById("theme-toggle");
+
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+                themetoggle.textContent = "☀️ Light Mode";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadTheme);
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinforcement learning</title>
+    <style>
+        .parallax1{
+            background-image: url(wrl.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+        h1 {
+  text-align: center;
+  font-size:500%;
+  margin-bottom: 2%;
+  background-color: rgba(255, 255, 255, 0.8); 
+}
+hr.new {
+  border-top: 2px dotted red;
+}
+.two{
+    text-align: center;
+  font-size:500%;
+  margin-bottom: 2%;
+  background-color: rgba(255, 255, 255, 0.6)
+}
+#one {
+  text-align: center;
+  font-size: 250%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#three {
+  text-align: center;
+  font-size: 200%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.parallax2{
+    background-image: url(hrl.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+}
+.home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body >
+    <div class="parallax1">
+    <h1>What is Reinforcement Learning ? </h1><hr class="new">
+    <p id="one">Reinforcement Learning (RL) is like teaching a dog a new trick. You show the dog what you want it to do (like fetching a ball), and when it does it right, you give it a treat (a reward). If it does something wrong, you don't give it a treat. Over time, the dog learns what gets it treats and becomes a pro at fetching.
+
+        RL for wind turbines is similar. A computer program acts like the dog, and the wind turbine is like the ball. The program tries different ways to control the turbine (like adjusting the blades) and gets a "treat" (a reward) when it makes the turbine spin in a way that makes lots of electricity. By trying different things and getting rewards, the program learns the best way to control the turbine, even when the wind changes.</p>
+    </div>
+    <div class="parallax2">
+        <h1 class="two">Implementation of Reinforced Learning</h1>
+        <p id="three">Reinforcement Learning (RL) is a type of machine learning where an agent learns to interact with an environment by receiving rewards or penalties based on its actions. In the context of wind turbine MPPT, the agent is an RL controller that learns to adjust the torque and pitch angle of the turbine to maximize the power output. The state of the environment includes wind speed, rotor speed, blade pitch, and power output. The goal of the agent is to maximize the long-term power extraction. Unlike traditional controllers, RL learns an optimal MPPT policy dynamically without requiring an explicit mathematical model of the wind turbine.</p>
+    </div>
+    <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+    <script>
+      function goHome() {
+          window.location.href = "index.html";
+      }
+  </script>
+</body>
+</html>

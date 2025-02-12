@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulink</title>
+    <style>
+        .parallax1{
+            background-image: url(simulink.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 800px;
+        }
+        h1{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.6);
+  font-size:500%;
+  margin-bottom: 2%;
+        }
+        .one{
+            text-align: center;
+  font-size: 250%;
+  background-color: rgba(255, 255, 255, 0.8);
+        }
+        .home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="parallax1">
+        <h1>IMPLEMENTATION IN SIMULINK</h1><br><br>
+    <p class="one">
+        <br>
+        The MATLAB simulation plan for implementing MPPT in a wind turbine system involves several steps. First, the wind turbine system will be modeled to simulate power output based on variations in wind speed, generator torque, and blade pitch. Next, a reinforcement learning (RL) agent will be trained in MATLAB using methods like Q-learning or Dyna-Q to find the most effective MPPT strategy. A reward function will guide the RL agent to improve power output with each step. The RL controller will then be deployed in Simulink to test various RL policies in real-time simulations. Finally, the performance of the RL-based MPPT approach will be compared to traditional MPPT methods to assess its efficiency and effectiveness.
+    </p>
+    </div>
+    <img src="/simu.jpg"
+    <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+    <script>
+        function goHome() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

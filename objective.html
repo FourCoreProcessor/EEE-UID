@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectiveS</title>
+    <style>
+       .cont {
+  text-align: center;
+}
+.lis {
+  display: inline-block;
+  text-align: left;
+  font-size: 30 px;
+}
+.home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body class="cont">
+    <h1>OBJECTIVES</h1>
+    <list>
+        <ol class="lis">
+            <li> Develop an RL-based MPPT strategy</li>
+            <li>Implement the RL agent in MATLAB Simulink and train it on simulated wind data.</li>
+            <li>Compare the efficiency of RL-based MPPT vs. traditional MPPT techniques.</li>
+            <li>Minimize power fluctuations and mechanical stress using a multi-objective RL approach.</li>
+        </ol>
+    </list>
+    <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+    <script>
+        function goHome() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

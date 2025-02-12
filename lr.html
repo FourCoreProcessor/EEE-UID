@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature Review</title>
+    <style>
+        .parallax1{
+            background-image: url(lr.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+        h1{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.4);
+  font-size:500%;
+  margin-bottom: 2%;
+        }
+        .one{
+            text-align: center;
+  font-size: 250%;
+  background-color: rgba(255, 255, 255, 0.4);
+        }
+        .home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="parallax1">
+        <h1>LITERATURE REVIEW</h1>
+    <p class="one">Researchers are exploring ways to enhance the efficiency of wind turbines in harnessing energy from the wind. They've observed that traditional control methods, such as PID controllers, often struggle, particularly when faced with rapid or unpredictable changes in wind conditions. These conventional techniques can fall short in adapting to the fluctuating wind.
+
+        However, a promising approach called Reinforcement Learning (RL) has emerged, showing significant potential. Studies indicate that RL-based controllers are much more adept at managing these unpredictable wind variations compared to older methods. Additionally, certain RL strategies not only improve energy capture but also help safeguard the wind turbine from excessive strain. This suggests that RL could be a key factor in making wind turbines more efficient and dependable</p>
+    </div>
+    <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+    <script>
+        function goHome() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

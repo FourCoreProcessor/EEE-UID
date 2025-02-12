@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expected Results</title>
+    <style>
+        .parallax1{
+            background-image: url(2311.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 600px;
+        }
+        h1{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+  font-size:500%;
+  margin-bottom: 2%;
+        }
+        .one{
+            text-align: center;
+  font-size: 250%;
+  background-color: rgba(255, 255, 255, 0.6);
+        }
+        .home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="parallax1">
+        <h1>EXPECTED RESULTS</h1>
+    <p class="one">The expected results of the RL-based MPPT implementation include higher power extraction compared to traditional methods like P&O or PID control. The RL approach is anticipated to achieve faster response times by learning optimal control actions in real time. Additionally, it is expected to reduce mechanical stress on the wind turbine by dynamically adapting torque and pitch angles, minimizing load fluctuations. The final outcome will be a self-optimizing MPPT system that maximizes wind energy efficiency while reducing wear and tear on the turbine components.
+
+    </div>
+    <img src="/simu.jpg"><img src="rein.jp" height="400" width="500">
+    <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    </body>
+</html>

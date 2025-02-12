@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTRODUCTION</title>
+  <style>
+    body{
+background-image: url("intro.jpg");
+min-height: 500px; 
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    }
+h1 {
+  text-align: center;
+  font-size:500%;
+  margin-bottom: 2%;
+}
+hr.new {
+  border-top: 2px dotted red;
+}
+#one {
+  text-align: center;
+  font-size: 250%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+  </style>
+</head>
+<body>
+  <div class="parallax">
+   <h1>INTRODUCTION</h1>
+   <hr class="new">
+   <p id="one"  >Wind is really a very significant method of making clean energy, but it is tricky because the wind does not blow at the same speed all the time.  This makes it hard for wind turbines to always get as much power as they can.  Think of it like 
+    trying to catch falling leaves - it's a lot easier if theyd are falling steadily than if they are swirling around in a crazy wind! To help with this, we use something called MPPT, which is like a smart system that helps the turbine adjust to catch 
+    the most energy, even when the wind changes.  Some older ways like Perturb & Observe (P&O), Tip Speed Ratio (TSR), and Fuzzy Logic Control aren't great at handling really fast changes in wind. But there is a really cool new idea called Reinforcement Learning, where a computer program learns to 
+    
+    adjust the turbine by trying different things and getting feedback, kind of like how you learn a video game! This helps the turbine get more power and also be gentler on the parts so they don't wear out as quickly.</p>
+   </div>
+   <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+   <script>
+    function goHome() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Statement</title>
+    <style>
+        .parallax1{
+            background-image: url(360_F_577341977_gIt4M0yLHiKeKF2gpv7C6OcFOycVczTx.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+        h1{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.4);
+  font-size:500%;
+  margin-bottom: 2%;
+        }
+        .one{
+            text-align: center;
+  font-size: 250%;
+  background-color: rgba(255, 255, 255, 0.4);
+        }
+        .home-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="parallax1">
+        <h1>PROBLEM STATEMENT</h1>
+    <p class="one">Traditional MPPT techniques fail to efficiently track the maximum power point under rapidly fluctuating wind conditions. This results in power losses and increased mechanical stress on wind turbine components. The goal of this research is to develop an adaptive, reinforcement learning-based MPPT algorithm that optimally adjusts turbine parameters in real-time to maximize power extraction and improve turbine longevity." 
+         </div>
+         <button onclick="goHome()" class="home-button">&lt-- Back to Home</button>
+         <script>
+            function goHome() {
+                window.location.href = "index.html";
+            }
+        </script>
+</body>
+</html>
