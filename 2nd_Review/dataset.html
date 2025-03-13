@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dataset Preview</h1>
+        <img src="datset.jpg" alt="Dataset Image">
+        <br>
+        <a href="https://www.kaggle.com/datasets/berkerisen/wind-turbine-scada-dataset" class="link" target="_blank"> Dataset</a>
+    </div>
+    <button onclick="goBack()">Back</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
